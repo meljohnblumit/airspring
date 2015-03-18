@@ -17,6 +17,7 @@
 @property (nonatomic, weak) IBOutlet UIView *receiptView;
 @property (nonatomic, weak) IBOutlet UIView *planCodeView;
 @property (nonatomic, weak) IBOutlet UIView *prefixes;
+@property (nonatomic, weak) IBOutlet UIView *printReceipt;
 @property (nonatomic, weak) IBOutlet UITextField *inputNumber;
 @property (nonatomic, weak) IBOutlet UIImageView *receipt;
 

@@ -47,10 +47,18 @@ typedef NS_ENUM(NSUInteger, Pages) {
     
     NSLog(@"parent tag: %d", page);
     
+    [self resetUI];
+}
+
+
+- (void)resetUI {
+
+
     [self.page1 setHidden:NO];
     [self.page2 setHidden:YES];
     [self.page3 setHidden:YES];
     [self.page4 setHidden:YES];
+    [self.printReceipt setHidden:YES];
     [self.inputNumber setEnabled:NO];
     
     [self.keypadOne setUserInteractionEnabled:NO];
@@ -66,11 +74,13 @@ typedef NS_ENUM(NSUInteger, Pages) {
     [self.keypadDel setUserInteractionEnabled:NO];
     [self.keypadEnter setUserInteractionEnabled:NO];
     
-    [self.planCodeView setHidden:NO];
-    [self.receiptView setHidden:NO];
-    
     [self.prefixes setHidden:YES];
+    
+    
+    [self.receiptView setHidden:NO];
+    [self.planCodeView setHidden:NO];
     [self.donePlancodeButton setEnabled:NO];
+    
     
     [self.receipt setImage:[UIImage imageNamed:@"receipt"]];
     [self.donePlancodeButton setImage:[UIImage imageNamed:@"done"] forState:normal];
@@ -78,6 +88,7 @@ typedef NS_ENUM(NSUInteger, Pages) {
     [self.inputNumber setText:@""];
     
 }
+
 
 -(IBAction)pageSetting:(id)sender{
     
@@ -133,6 +144,7 @@ typedef NS_ENUM(NSUInteger, Pages) {
     [self.page3 setHidden:YES];
     [self.page4 setHidden:YES];
     [self.prefixes setHidden:YES];
+    [self.printReceipt setHidden:YES];
     
     [self.keypadOne setUserInteractionEnabled:NO];
     [self.keypadTwo setUserInteractionEnabled:NO];
@@ -146,6 +158,7 @@ typedef NS_ENUM(NSUInteger, Pages) {
     [self.keypadZero setUserInteractionEnabled:NO];
     [self.keypadDel setUserInteractionEnabled:NO];
     [self.keypadEnter setUserInteractionEnabled:NO];
+    
 }
 
 #pragma mark - PAGE 2
@@ -155,6 +168,7 @@ typedef NS_ENUM(NSUInteger, Pages) {
     [self.page2 setHidden:YES];
     [self.page3 setHidden:NO];
     [self.page4 setHidden:YES];
+    [self.printReceipt setHidden:YES];
     
     [self.planCodeView setHidden:YES];
     [self.receiptView setHidden:YES];
@@ -248,6 +262,7 @@ typedef NS_ENUM(NSUInteger, Pages) {
     [self.donePlancodeButton setImage:[UIImage imageNamed:@"done"] forState:normal];
     [self.prefixes setHidden:YES];
     [self.smartPlancode setUserInteractionEnabled:YES];
+    [self.printReceipt setHidden:YES];
     
     [self.inputNumber setText:@""];
     
@@ -264,6 +279,36 @@ typedef NS_ENUM(NSUInteger, Pages) {
     [self.keypadDel setUserInteractionEnabled:NO];
     [self.keypadEnter setUserInteractionEnabled:NO];
     
+    
+}
+
+-(IBAction)doneSelectionOfPlanCode:(id)sender{
+
+    [self.printReceipt setHidden:NO];
+    [self.page1 setHidden:YES];
+    [self.page2 setHidden:YES];
+    [self.page3 setHidden:YES];
+    [self.page4 setHidden:YES];
+    
+    [self.planCodeView setHidden:YES];
+    [self.receiptView setHidden:YES];
+    
+    
+    
+}
+
+-(IBAction)removeReceipt:(id)sender{
+    
+    [self resetUI];
+    
+    [self.page1 setHidden:YES];
+    [self.page2 setHidden:YES];
+    [self.page3 setHidden:NO];
+    [self.page4 setHidden:YES];
+    [self.printReceipt setHidden:YES];
+    
+    [self.planCodeView setHidden:YES];
+    [self.receiptView setHidden:YES];
     
 }
 
