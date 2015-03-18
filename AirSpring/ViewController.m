@@ -9,6 +9,10 @@
 #import "ViewController.h"
 
 static BOOL isKeypadEnabled = NO;
+static BOOL isPicker1Active =  NO;
+static BOOL isPicker2Active =  YES;
+
+static NSArray *sequenceArray = nil;
 
 typedef NS_ENUM(NSUInteger, Pages) {
     Page1 = 1,
@@ -30,6 +34,16 @@ typedef NS_ENUM(NSUInteger, Pages) {
     [self.page2 setHidden:YES];
     [self.page3 setHidden:YES];
     [self.page4 setHidden:YES];
+
+    [self.page5SnapABill1 setHidden:YES];
+    [self.page5SnapABill2 setHidden:YES];
+    [self.page5SnapABill3 setHidden:YES];
+    [self.page5SnapABill4 setHidden:YES];
+
+    [self.page5Receipt setHidden:YES];
+    [self.page5Complete setHidden:YES];
+    
+    
     [self.inputNumber setEnabled:NO];
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -178,6 +192,136 @@ typedef NS_ENUM(NSUInteger, Pages) {
     }
 }
 
+
+#pragma mark - SnapABill
+
+
+- (IBAction)payBills:(id)sender {
+    [self.page5SnapABill1 setHidden:NO];
+    
+    [self.page1 setHidden:YES];
+    [self.page2 setHidden:YES];
+    [self.page3 setHidden:YES];
+    [self.page4 setHidden:YES];
+    
+}
+
+- (IBAction)goToHome:(id)sender {
+    [self.page5SnapABill1 setHidden:YES];
+    [self.page5SnapABill2 setHidden:YES];
+    [self.page5SnapABill3 setHidden:YES];
+    [self.page5SnapABill4 setHidden:YES];
+    
+    [self.page5Complete setHidden:YES];
+    [self.page5Receipt setHidden:YES];
+    
+    
+    [self.page1 setHidden:NO];
+    [self.page2 setHidden:YES];
+    [self.page3 setHidden:YES];
+    [self.page4 setHidden:YES];
+    
+    [self.page5ImageView stopAnimating];
+    sequenceArray = nil;
+    self.page5ImageView.animationImages = nil;
+    
+}
+
+- (IBAction)snapABill1:(id)sender {
+    [self.page5SnapABill1 setHidden:YES];
+    [self.page5SnapABill2 setHidden:NO];
+    
+    sequenceArray = @[[UIImage imageNamed:@"bill_00019"],
+                      [UIImage imageNamed:@"bill_00020"],
+                      [UIImage imageNamed:@"bill_00021"],
+                      [UIImage imageNamed:@"bill_00022"],
+                      [UIImage imageNamed:@"bill_00023"],
+                      [UIImage imageNamed:@"bill_00024"],
+                      [UIImage imageNamed:@"bill_00025"],
+                      [UIImage imageNamed:@"bill_00026"],
+                      [UIImage imageNamed:@"bill_00027"],
+                      [UIImage imageNamed:@"bill_00028"],
+                      [UIImage imageNamed:@"bill_00029"],
+                      [UIImage imageNamed:@"bill_00043"],
+                      [UIImage imageNamed:@"bill_00044"],
+                      [UIImage imageNamed:@"bill_00045"],
+                      [UIImage imageNamed:@"bill_00046"],
+                      [UIImage imageNamed:@"bill_00047"],
+                      [UIImage imageNamed:@"bill_00048"],
+                      [UIImage imageNamed:@"bill_00049"],
+                      [UIImage imageNamed:@"bill_00050"]
+                      ];
+    
+    NSLog(@"array: %@",sequenceArray);
+    
+    self.page5ImageView.animationImages = sequenceArray;
+    
+    self.page5ImageView.animationDuration=3.0f;
+    self.page5ImageView.animationRepeatCount=1;
+    [self.page5ImageView startAnimating];
+    
+}
+
+- (IBAction)snapABill2:(id)sender {
+    
+    [self.page5ImageView stopAnimating];
+    sequenceArray = nil;
+    self.page5ImageView.animationImages = nil;
+    
+    [self.page5SnapABill2 setHidden:YES];
+    [self.page5SnapABill3 setHidden:NO];
+}
+
+- (IBAction)snapABill3:(id)sender {
+    
+    [self.page5SnapABill3 setHidden:YES];
+    [self.page5SnapABill4 setHidden:NO];
+}
+
+- (IBAction)snapABill4:(id)sender {
+    [self.page5SnapABill4 setHidden:YES];
+    [self.page5SnapABill1 setHidden:NO];
+}
+
+- (IBAction)snapABillPayNow:(id)sender {
+    [self.page5SnapABill4 setHidden:YES];
+    [self.page5Receipt setHidden:NO];
+}
+
+- (IBAction)pay:(id)sender {
+    [self.page5Receipt setHidden:YES];
+    [self.page5Complete setHidden:NO];
+}
+
+- (IBAction)completeNo:(id)sender {
+    [self.page5Complete setHidden:YES];
+    [self.page1 setHidden:NO];
+}
+
+- (IBAction)completeYes:(id)sender {
+    [self.page5Complete setHidden:YES];
+    [self.page1 setHidden:NO];
+}
+
+
+- (IBAction)picker1:(UIButton *)sender {
+    if (isPicker1Active) {
+        isPicker1Active = NO;
+        [sender setImage:[UIImage imageNamed:@"picker-inactive"] forState:UIControlStateNormal];
+    } else {
+        isPicker1Active = YES;
+        [sender setImage:[UIImage imageNamed:@"picker-active"] forState:UIControlStateNormal];
+    }
+}
+- (IBAction)picker2:(UIButton *)sender {
+    if (isPicker2Active) {
+        isPicker2Active = NO;
+        [sender setImage:[UIImage imageNamed:@"picker-inactive"] forState:UIControlStateNormal];
+    } else {
+        isPicker2Active = YES;
+        [sender setImage:[UIImage imageNamed:@"picker-active"] forState:UIControlStateNormal];
+    }
+}
 
 
 
