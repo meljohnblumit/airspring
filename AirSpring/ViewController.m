@@ -47,30 +47,35 @@ typedef NS_ENUM(NSUInteger, Pages) {
     
     NSLog(@"parent tag: %d", page);
     
-    switch(page){
-            
-        case Page1:
-            break;
-        case Page2:
-            
-            [self.page1 setHidden:NO];
-            [self.page2 setHidden:YES];
-            [self.page3 setHidden:YES];
-            [self.page4 setHidden:YES];
-            
-            break;
-        case Page3:
-            
-            [self.page1 setHidden:NO];
-            [self.page2 setHidden:YES];
-            [self.page3 setHidden:YES];
-            [self.page4 setHidden:YES];
-            
-            break;
-        case Page4:
-            break;
-            
-    }
+    [self.page1 setHidden:NO];
+    [self.page2 setHidden:YES];
+    [self.page3 setHidden:YES];
+    [self.page4 setHidden:YES];
+    [self.inputNumber setEnabled:NO];
+    
+    [self.keypadOne setUserInteractionEnabled:NO];
+    [self.keypadTwo setUserInteractionEnabled:NO];
+    [self.keypadThree setUserInteractionEnabled:NO];
+    [self.keypadFour setUserInteractionEnabled:NO];
+    [self.keypadFive setUserInteractionEnabled:NO];
+    [self.keypadSix setUserInteractionEnabled:NO];
+    [self.keypadSeven setUserInteractionEnabled:NO];
+    [self.keypadEight setUserInteractionEnabled:NO];
+    [self.keypadNine setUserInteractionEnabled:NO];
+    [self.keypadZero setUserInteractionEnabled:NO];
+    [self.keypadDel setUserInteractionEnabled:NO];
+    [self.keypadEnter setUserInteractionEnabled:NO];
+    
+    [self.planCodeView setHidden:NO];
+    [self.receiptView setHidden:NO];
+    
+    [self.prefixes setHidden:YES];
+    [self.donePlancodeButton setEnabled:NO];
+    
+    [self.receipt setImage:[UIImage imageNamed:@"receipt"]];
+    [self.donePlancodeButton setImage:[UIImage imageNamed:@"done"] forState:normal];
+    [self.smartPlancode setUserInteractionEnabled:YES];
+    [self.inputNumber setText:@""];
     
 }
 
@@ -127,6 +132,20 @@ typedef NS_ENUM(NSUInteger, Pages) {
     [self.page2 setHidden:NO];
     [self.page3 setHidden:YES];
     [self.page4 setHidden:YES];
+    [self.prefixes setHidden:YES];
+    
+    [self.keypadOne setUserInteractionEnabled:NO];
+    [self.keypadTwo setUserInteractionEnabled:NO];
+    [self.keypadThree setUserInteractionEnabled:NO];
+    [self.keypadFour setUserInteractionEnabled:NO];
+    [self.keypadFive setUserInteractionEnabled:NO];
+    [self.keypadSix setUserInteractionEnabled:NO];
+    [self.keypadSeven setUserInteractionEnabled:NO];
+    [self.keypadEight setUserInteractionEnabled:NO];
+    [self.keypadNine setUserInteractionEnabled:NO];
+    [self.keypadZero setUserInteractionEnabled:NO];
+    [self.keypadDel setUserInteractionEnabled:NO];
+    [self.keypadEnter setUserInteractionEnabled:NO];
 }
 
 #pragma mark - PAGE 2
@@ -158,6 +177,11 @@ typedef NS_ENUM(NSUInteger, Pages) {
             
         } else if([keypadButton isEqual:self.keypadEnter]){
             
+            [self.planCodeView setHidden:NO];
+            [self.receiptView setHidden:NO];
+            [self.removePlancodeButton setHidden:YES];
+            [self.donePlancodeButton setEnabled:NO];
+            
         }
         else{
             self.inputNumber.text = [self.inputNumber.text stringByAppendingFormat:@"%d",keypadButton.tag];
@@ -171,14 +195,77 @@ typedef NS_ENUM(NSUInteger, Pages) {
     
     isKeypadEnabled = YES;
     
-    for(int i = 1; i <= 10; i++){
+    [self.keypadOne setUserInteractionEnabled:YES];
+    [self.keypadTwo setUserInteractionEnabled:YES];
+    [self.keypadThree setUserInteractionEnabled:YES];
+    [self.keypadFour setUserInteractionEnabled:YES];
+    [self.keypadFive setUserInteractionEnabled:YES];
+    [self.keypadSix setUserInteractionEnabled:YES];
+    [self.keypadSeven setUserInteractionEnabled:YES];
+    [self.keypadEight setUserInteractionEnabled:YES];
+    [self.keypadNine setUserInteractionEnabled:YES];
+    [self.keypadZero setUserInteractionEnabled:YES];
+    [self.keypadDel setUserInteractionEnabled:YES];
+    [self.keypadEnter setUserInteractionEnabled:YES];
     
-        
+    [self.prefixes setHidden:NO];
     
-    }
+    
 }
 
+-(IBAction)addPlancode:(id)sender{
 
+    [self.receipt setImage:[UIImage imageNamed:@"Transaction"]];
+    [self.planCodeView setHidden:YES];
+    [self.removePlancodeButton setHidden:NO];
+    [self.donePlancodeButton setImage:[UIImage imageNamed:@"doneEnabled"] forState:normal];
+    [self.donePlancodeButton setEnabled:YES];
+    
+    
+    [self.keypadOne setUserInteractionEnabled:NO];
+    [self.keypadTwo setUserInteractionEnabled:NO];
+    [self.keypadThree setUserInteractionEnabled:NO];
+    [self.keypadFour setUserInteractionEnabled:NO];
+    [self.keypadFive setUserInteractionEnabled:NO];
+    [self.keypadSix setUserInteractionEnabled:NO];
+    [self.keypadSeven setUserInteractionEnabled:NO];
+    [self.keypadEight setUserInteractionEnabled:NO];
+    [self.keypadNine setUserInteractionEnabled:NO];
+    [self.keypadZero setUserInteractionEnabled:NO];
+    [self.keypadDel setUserInteractionEnabled:NO];
+    [self.keypadEnter setUserInteractionEnabled:NO];
+    
+    [self.prefixes setHidden:YES];
+    [self.smartPlancode setUserInteractionEnabled:NO];
+    
+}
+
+-(IBAction)removePlancode:(id)sender{
+    
+    [self.receipt setImage:[UIImage imageNamed:@"receipt"]];
+    [self.receiptView setHidden:YES];
+    [self.removePlancodeButton setHidden:YES];
+    [self.donePlancodeButton setImage:[UIImage imageNamed:@"done"] forState:normal];
+    [self.prefixes setHidden:YES];
+    [self.smartPlancode setUserInteractionEnabled:YES];
+    
+    [self.inputNumber setText:@""];
+    
+    [self.keypadOne setUserInteractionEnabled:NO];
+    [self.keypadTwo setUserInteractionEnabled:NO];
+    [self.keypadThree setUserInteractionEnabled:NO];
+    [self.keypadFour setUserInteractionEnabled:NO];
+    [self.keypadFive setUserInteractionEnabled:NO];
+    [self.keypadSix setUserInteractionEnabled:NO];
+    [self.keypadSeven setUserInteractionEnabled:NO];
+    [self.keypadEight setUserInteractionEnabled:NO];
+    [self.keypadNine setUserInteractionEnabled:NO];
+    [self.keypadZero setUserInteractionEnabled:NO];
+    [self.keypadDel setUserInteractionEnabled:NO];
+    [self.keypadEnter setUserInteractionEnabled:NO];
+    
+    
+}
 
 
 - (void)didReceiveMemoryWarning {

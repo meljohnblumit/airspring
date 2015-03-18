@@ -16,7 +16,9 @@
 @property (nonatomic, weak) IBOutlet UIView *page4;
 @property (nonatomic, weak) IBOutlet UIView *receiptView;
 @property (nonatomic, weak) IBOutlet UIView *planCodeView;
+@property (nonatomic, weak) IBOutlet UIView *prefixes;
 @property (nonatomic, weak) IBOutlet UITextField *inputNumber;
+@property (nonatomic, weak) IBOutlet UIImageView *receipt;
 
 @property (nonatomic, weak) IBOutlet UIButton *keypadOne;
 @property (nonatomic, weak) IBOutlet UIButton *keypadTwo;
@@ -30,6 +32,10 @@
 @property (nonatomic, weak) IBOutlet UIButton *keypadZero;
 @property (nonatomic, weak) IBOutlet UIButton *keypadDel;
 @property (nonatomic, weak) IBOutlet UIButton *keypadEnter;
+@property (nonatomic, weak) IBOutlet UIButton *removePlancodeButton;
+@property (nonatomic, weak) IBOutlet UIButton *donePlancodeButton;
+
+@property (nonatomic, weak) IBOutlet UIButton *smartPlancode;
 
 @end
 
