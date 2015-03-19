@@ -13,7 +13,18 @@
 		14E5BB771AB922460058CB92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14E5BB751AB922460058CB92 /* Main.storyboard */; };
 		14E5BB791AB922460058CB92 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14E5BB781AB922460058CB92 /* Images.xcassets */; };
 		14E5BB7C1AB922460058CB92 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E5BB7A1AB922460058CB92 /* LaunchScreen.xib */; };
+		14E5BB881AB922460058CB92 /* AirSpringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E5BB871AB922460058CB92 /* AirSpringTests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14E5BB821AB922460058CB92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14E5BB601AB922450058CB92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14E5BB671AB922450058CB92;
+			remoteInfo = AirSpring;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		14E5BB681AB922450058CB92 /* AirSpring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirSpring.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,10 +37,20 @@
 		14E5BB761AB922460058CB92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14E5BB781AB922460058CB92 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		14E5BB7B1AB922460058CB92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		14E5BB811AB922460058CB92 /* AirSpringTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirSpringTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14E5BB861AB922460058CB92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14E5BB871AB922460058CB92 /* AirSpringTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirSpringTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		14E5BB651AB922450058CB92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14E5BB7E1AB922460058CB92 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				14E5BB6A1AB922450058CB92 /* AirSpring */,
+				14E5BB841AB922460058CB92 /* AirSpringTests */,
 				14E5BB691AB922450058CB92 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				14E5BB681AB922450058CB92 /* AirSpring.app */,
+				14E5BB811AB922460058CB92 /* AirSpringTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,6 +102,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		14E5BB841AB922460058CB92 /* AirSpringTests */ = {
+			isa = PBXGroup;
+			children = (
+				14E5BB871AB922460058CB92 /* AirSpringTests.m */,
+				14E5BB851AB922460058CB92 /* Supporting Files */,
+			);
+			path = AirSpringTests;
+			sourceTree = "<group>";
+		};
+		14E5BB851AB922460058CB92 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14E5BB861AB922460058CB92 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -99,6 +139,24 @@
 			productReference = 14E5BB681AB922450058CB92 /* AirSpring.app */;
 			productType = "com.apple.product-type.application";
 		};
+		14E5BB801AB922460058CB92 /* AirSpringTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14E5BB8E1AB922460058CB92 /* Build configuration list for PBXNativeTarget "AirSpringTests" */;
+			buildPhases = (
+				14E5BB7D1AB922460058CB92 /* Sources */,
+				14E5BB7E1AB922460058CB92 /* Frameworks */,
+				14E5BB7F1AB922460058CB92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14E5BB831AB922460058CB92 /* PBXTargetDependency */,
+			);
+			name = AirSpringTests;
+			productName = AirSpringTests;
+			productReference = 14E5BB811AB922460058CB92 /* AirSpringTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -111,6 +169,10 @@
 					14E5BB671AB922450058CB92 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = PB572UCLN9;
+					};
+					14E5BB801AB922460058CB92 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 14E5BB671AB922450058CB92;
 					};
 				};
 			};
@@ -128,6 +190,7 @@
 			projectRoot = "";
 			targets = (
 				14E5BB671AB922450058CB92 /* AirSpring */,
+				14E5BB801AB922460058CB92 /* AirSpringTests */,
 			);
 		};
 /* End PBXProject section */
@@ -140,6 +203,13 @@
 				14E5BB771AB922460058CB92 /* Main.storyboard in Resources */,
 				14E5BB7C1AB922460058CB92 /* LaunchScreen.xib in Resources */,
 				14E5BB791AB922460058CB92 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14E5BB7F1AB922460058CB92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +226,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		14E5BB7D1AB922460058CB92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14E5BB881AB922460058CB92 /* AirSpringTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14E5BB831AB922460058CB92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14E5BB671AB922450058CB92 /* AirSpring */;
+			targetProxy = 14E5BB821AB922460058CB92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		14E5BB751AB922460058CB92 /* Main.storyboard */ = {
@@ -284,6 +370,40 @@
 			};
 			name = Release;
 		};
+		14E5BB8F1AB922460058CB92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AirSpringTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AirSpring.app/AirSpring";
+			};
+			name = Debug;
+		};
+		14E5BB901AB922460058CB92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AirSpringTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AirSpring.app/AirSpring";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -301,6 +421,15 @@
 			buildConfigurations = (
 				14E5BB8C1AB922460058CB92 /* Debug */,
 				14E5BB8D1AB922460058CB92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14E5BB8E1AB922460058CB92 /* Build configuration list for PBXNativeTarget "AirSpringTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14E5BB8F1AB922460058CB92 /* Debug */,
+				14E5BB901AB922460058CB92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
